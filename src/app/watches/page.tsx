@@ -1,34 +1,31 @@
-import React from 'react'
-
+import React from "react";
+import Image from "next/image";
 
 const Watches = () => {
-
-const watchData = [
-  {id: 1, name: 'Rolex', Price:150, description: 'Luxury watch', image: '/rolex1.jpeg'},
-  {id: 2, name: 'Smart watch disgin', Price:300, description: 'Smart watch disgin', image: '/smart watch.jpg'},
-  {id: 3, name: 'Elegant timepieco', Price:150, description: 'Elegant timepieco', image: '/watch3.jpeg'},
-  {id: 4, name: 'Bold and rugged', Price:200, description: 'Bold and rugged', image: '/watch4.jpeg'},
-  {id: 5, name: 'Rolex', Price:150, description: 'Luxury watch', image: '/watch5.jpeg'},
-  {id: 6, name: 'Rolex', Price:150, description: 'Luxury watch', image: '/watch6.jpeg'},
-
-]
+  const watchData = [
+    { id: 1, name: "Rolex", price: 150, description: "Luxury watch", image: "/rolex1.jpeg" },
+    { id: 2, name: "Smart Watch Design", price: 300, description: "Smart Watch Design", image: "/smart_watch.jpg" },
+    { id: 3, name: "Elegant Timepiece", price: 150, description: "Elegant Timepiece", image: "/watch3.jpeg" },
+    { id: 4, name: "Bold and Rugged", price: 200, description: "Bold and Rugged", image: "/watch4.jpeg" },
+    { id: 5, name: "Rolex", price: 150, description: "Luxury watch", image: "/watch5.jpeg" },
+    { id: 6, name: "Rolex", price: 150, description: "Luxury watch", image: "/watch6.jpeg" },
+  ];
 
   return (
     <div>
       <div className="watches">
         {watchData.map((watch) => (
-         <div key={watch.id} className='watch-card'>
-          <img src={watch.image} alt={watch.name}/>
-          <h3>{watch.name}</h3>
-          <p>{watch.description}</p>
-          <div className="price">${watch.Price}</div>
-          <button>Add to Cart </button>
-         </div>
-
+          <div key={watch.id} className="watch-card">
+            <Image src={watch.image} alt={watch.name} width={200} height={200} />
+            <h3>{watch.name}</h3>
+            <p>{watch.description}</p>
+            <div className="price">${watch.price}</div>
+            <button>Add to Cart</button>
+          </div>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Watches
+export default Watches;
